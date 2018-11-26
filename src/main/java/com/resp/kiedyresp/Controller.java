@@ -23,7 +23,13 @@ public class Controller {
         while (true) {
             resp = resp.plusMinutes(72 * i);
             if (resp.isAfter(now)) {
-                return (boss + resp.format(DateTimeFormatter.ofPattern("d-MM H:mm")) + "<br></br>");
+                String ret = boss;
+                ret = ret + resp.format(DateTimeFormatter.ofPattern("d-MM H:mm")) + ", ";
+                resp = resp.plusMinutes(72 * i);
+                ret = ret + resp.format(DateTimeFormatter.ofPattern("d-MM H:mm")) + ", ";
+                resp = resp.plusMinutes(72 * i);
+                ret = ret + resp.format(DateTimeFormatter.ofPattern("d-MM H:mm")) + "<br></br>";
+                return ret;
             }
         }
     }
