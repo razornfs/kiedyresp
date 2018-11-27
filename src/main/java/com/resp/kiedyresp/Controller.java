@@ -30,7 +30,7 @@ public class Controller {
                 String ret = boss;
                 ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
                 resp = resp.plusMinutes(72 * i);
-                ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
+                ret = ret + "<b><font size = 5>" + resp.format(DateTimeFormatter.ofPattern(pattern)) + "</font></b>" + ", ";
                 resp = resp.plusMinutes(72 * i);
                 ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
                 resp = resp.plusMinutes(72 * i);
