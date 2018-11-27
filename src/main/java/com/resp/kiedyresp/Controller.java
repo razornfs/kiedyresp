@@ -8,6 +8,9 @@ import java.time.format.DateTimeFormatter;
 
 @RestController
 public class Controller {
+
+    private static String pattern = "H:mm";
+
     @GetMapping("/")
     public static String asd() {
         return
@@ -25,13 +28,13 @@ public class Controller {
             if (resp.isAfter(now)) {
                 resp = resp.minusMinutes(72 * i);
                 String ret = boss;
-                ret = ret + resp.format(DateTimeFormatter.ofPattern("d-MM H:mm")) + ", ";
+                ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
                 resp = resp.plusMinutes(72 * i);
-                ret = ret + resp.format(DateTimeFormatter.ofPattern("d-MM H:mm")) + ", ";
+                ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
                 resp = resp.plusMinutes(72 * i);
-                ret = ret + resp.format(DateTimeFormatter.ofPattern("d-MM H:mm")) + ", ";
+                ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
                 resp = resp.plusMinutes(72 * i);
-                ret = ret + resp.format(DateTimeFormatter.ofPattern("d-MM H:mm")) + "<br></br>";
+                ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + "<br></br>";
                 return ret;
             }
         }
