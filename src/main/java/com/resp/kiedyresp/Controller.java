@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 public class Controller {
 
     private static String pattern = "H:mm";
+    private static String aktu = "Ostatnia aktualizacja: 12 grudnia";
 
     @GetMapping("/")
     public static String asd() {
@@ -17,7 +18,7 @@ public class Controller {
                 "<center>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(4, "herobriny: ") +
                 wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") + "</center>";
+                wyliczResp(12, "avatara: ") + aktu + "</center>";
     }
 
     private static String wyliczResp(int i, String boss) {
@@ -30,7 +31,8 @@ public class Controller {
                 String ret = boss;
                 ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
                 resp = resp.plusMinutes(72 * i);
-                ret = ret + "<b><font size = 5>" + resp.format(DateTimeFormatter.ofPattern(pattern)) + "</font></b>" + ", ";
+                ret = ret + "<b><font size = 5>" + resp.format(DateTimeFormatter.ofPattern(pattern)) + "</font></b>" +
+                      ", ";
                 resp = resp.plusMinutes(72 * i);
                 ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
                 resp = resp.plusMinutes(72 * i);
