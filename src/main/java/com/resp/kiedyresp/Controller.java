@@ -47,8 +47,9 @@ public class Controller {
         return "<br></br><b><font size = 5>" + "Zbijanie przywołań Avatara" + "</font></b><br></br>" +
                "4 stycznia: Bonkers, Antypatyczny, Chapman, SilenceLife, NiePijTato, Paverell" + "<br></br>" +
                "11 stycznia: Bonkers, Antypatyczny, Slooodziak, WojOnePLK, CeHa, SpeaDreaM" + "<br></br>" +
-               "18 stycznia: Bonkers, Antypatyczny, Eiv, Rubiks, Pimber, BilonJP" + "<br></br>" +
-               "25 stycznia: Bonkers, Antypatyczny, Bagroownik, HotTreasure, D4MN, Ropeflake" + "<br></br>" +
+               "18 stycznia: Bonkers, Antypatyczny, Eiv, Rubiks, Pimber, D4MN" + "<br></br>" +
+               "25 stycznia: Bonkers, Antypatyczny, Bagroownik, HotTreasure, BilonJP, Ropeflake" + "<br></br>" +
+               "1 lutego: Bonkers, SilenceLife, Alojz, Hikikomori, LetMeKill, NiePijTato" + "<br></br>" +
                 "Każda grupa zbija 30 przywołań. Wpisowe: 300b";
     }
 }
