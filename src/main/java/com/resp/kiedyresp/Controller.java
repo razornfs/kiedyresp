@@ -48,7 +48,7 @@ public class Controller {
                "4 stycznia: Bonkers, Antypatyczny, Chapman, SilenceLife, NiePijTato, Paverell" + "<br></br>" +
                "11 stycznia: Bonkers, Antypatyczny, Slooodziak, WojOnePLK, CeHa, SpeaDreaM" + "<br></br>" +
                "18 stycznia: Bonkers, Antypatyczny, Hikikomori, Rubiks, Pimber, BilonJP" + "<br></br>" +
-               "25 stycznia: Bonkers, Antypatyczny, Bagrooownik, HotTreasure, D4MN, Ropeflake" + "<br></br>" +
+               "25 stycznia: Bonkers, Antypatyczny, Bagroownik, HotTreasure, D4MN, Ropeflake" + "<br></br>" +
                "1 lutego: Bonkers, Antypatyczny, Chapman, Eiv, SilenceLife, NiePijTato" + "<br></br>" +
                 "Każda grupa zbija 30 przywołań. Wpisowe: 300b";
     }
