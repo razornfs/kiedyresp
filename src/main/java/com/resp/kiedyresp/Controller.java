@@ -50,6 +50,6 @@ public class Controller {
                "18 stycznia: Bonkers, Antypatyczny, Eiv, Rubiks, Pimber, D4MN" + "<br></br>" +
                "25 stycznia: Bonkers, Antypatyczny, Bagroownik, HotTreasure, BilonJP, Ropeflake" + "<br></br>" +
                "1 lutego: Bonkers, SilenceLife, Alojz, Hikikomori, LetMeKill, NiePijTato" + "<br></br>" +
-                "Każda grupa zbija 30 przywołań. Wpisowe: 300b";
+                "Każda grupa zbija 30 przywołań. Wpisowe od osoby: 300b";
     }
 }
