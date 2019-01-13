@@ -19,7 +19,7 @@ public class Controller {
                 wyliczResp(4, "herobriny: ") +
                 wyliczResp(6, "minosów: ") +
                 wyliczResp(12, "avatara: ") +
-                wyliczResp(3, "bałwana: ") + aktu + rozpiska() + "</center>";
+                wyliczResp(3, "bałwana: ") + aktu + rozpiska() + poradnik() + "</center>";
     }
 
     private static String wyliczResp(int i, String boss) {
@@ -53,5 +53,9 @@ public class Controller {
 //                "Każda grupa zbija 30 przywołań. Wpisowe od osoby: 300b";
 
         return "<br></br><a href=https://discord.gg/d3Rf7sy>Info co do zbijania avatarów, sojuszy itd.</a>";
+    }
+
+    private static String poradnik() {
+        return "<br></br><a href=poradnik.html>Wojna gildii - poradnik</a>";
     }
 }
