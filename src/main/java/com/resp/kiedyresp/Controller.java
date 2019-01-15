@@ -18,13 +18,12 @@ public class Controller {
                 "<center>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(4, "herobriny: ") +
                 wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") +
-                wyliczResp(3, "bałwana: ") + aktu + rozpiska() + poradnik() + "</center>";
+                wyliczResp(12, "avatara: ") + aktu + rozpiska() + poradnik() + "</center>";
     }
 
     private static String wyliczResp(int i, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(60);
-        LocalDateTime resp = LocalDateTime.of(2019, 1, 7, 10, 46);
+        LocalDateTime resp = LocalDateTime.of(2019, 1, 16, 0, 30);
         while (true) {
             resp = resp.plusMinutes(72 * i);
             if (resp.isAfter(now)) {
