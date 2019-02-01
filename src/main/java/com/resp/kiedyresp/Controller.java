@@ -23,7 +23,7 @@ public class Controller {
 
     private static String wyliczResp(int i, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(60);
-        LocalDateTime resp = LocalDateTime.of(2019, 2, 1, 7, 16);
+        LocalDateTime resp = LocalDateTime.of(2019, 2, 1, 8, 16);
         while (true) {
             resp = resp.plusMinutes(72 * i);
             if (resp.isAfter(now)) {
