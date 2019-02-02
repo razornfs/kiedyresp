@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 public class Controller {
 
     private static String pattern = "H:mm";
-    private static String aktu = "Ostatnia aktualizacja: 1 lutego";
+    private static String aktu = "Ostatnia aktualizacja: 2 lutego";
 
     @GetMapping("/")
     public static String asd() {
@@ -23,7 +23,7 @@ public class Controller {
 
     private static String wyliczResp(int i, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(60);
-        LocalDateTime resp = LocalDateTime.of(2019, 2, 1, 8, 16);
+        LocalDateTime resp = LocalDateTime.of(2019, 2, 2, 20, 12);
         while (true) {
             resp = resp.plusMinutes(72 * i);
             if (resp.isAfter(now)) {
