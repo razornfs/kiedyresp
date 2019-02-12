@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 public class Controller {
 
     private static String pattern = "H:mm";
-    private static String aktu = "Ostatnia aktualizacja: 2 lutego";
+    private static String aktu = "Ostatnia aktualizacja: 13 lutego";
 
     @GetMapping("/")
     public static String asd() {
