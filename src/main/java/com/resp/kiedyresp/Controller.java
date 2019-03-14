@@ -11,6 +11,7 @@ public class Controller {
 
     private static String pattern = "H:mm";
     private static String aktu = "Ostatnia aktualizacja: 7 marca";
+    private static double odstep = 71.95;
 
     @GetMapping("/")
     public static String asd() {
@@ -25,17 +26,17 @@ public class Controller {
         LocalDateTime now = LocalDateTime.now().plusMinutes(60);
         LocalDateTime resp = LocalDateTime.of(2019, 3, 7, 6, 46);
         while (true) {
-            resp = resp.plusMinutes(72 * i);
+            resp = resp.plusSeconds((long) (odstep * i * 60));
             if (resp.isAfter(now)) {
-                resp = resp.minusMinutes(72 * i);
+                resp = resp.minusSeconds((long) (odstep * i * 60));
                 String ret = boss;
                 ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
-                resp = resp.plusMinutes(72 * i);
+                resp = resp.plusSeconds((long) (odstep * i * 60));
                 ret = ret + "<b><font size = 5>" + resp.format(DateTimeFormatter.ofPattern(pattern)) + "</font></b>" +
                       ", ";
-                resp = resp.plusMinutes(72 * i);
+                resp = resp.plusSeconds((long) (odstep * i * 60));
                 ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
-                resp = resp.plusMinutes(72 * i);
+                resp = resp.plusSeconds((long) (odstep * i * 60));
                 ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + "<br></br>";
                 return ret;
             }
