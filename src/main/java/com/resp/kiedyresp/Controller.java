@@ -16,10 +16,7 @@ public class Controller {
     @GetMapping("/")
     public static String asd() {
         return
-                "<center>" + wyliczResp(1, "bossów: ") +
-                wyliczResp(4, "herobriny: ") +
-                wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") + aktu + rozpiska() + poradnik() + "</center>";
+                "<center>" + "Migracja, po nowy adres PW na discordzie." + "</center>";
     }
 
     private static String wyliczResp(int i, String boss) {
