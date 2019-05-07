@@ -16,10 +16,10 @@ public class Controller {
     @GetMapping("/")
     public static String asd() {
         return
-                "<center>" + wyliczResp(1, "bossów: ") +
+                "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(4, "herobriny: ") +
                 wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") + aktu + rozpiska() + poradnik() + "</center>";
+                wyliczResp(12, "avatara: ") + aktu + rozpiska() + poradnik() + "</center></font></body>";
     }
 
     private static String wyliczResp(int i, String boss) {
