@@ -20,7 +20,7 @@ public class Controller {
                 wyliczResp(4, "herobriny: ") +
                 wyliczResp(6, "minosów: ") +
                 wyliczResp(12, "avatara: ") +
-                wyliczResp(2, "żab (niepotwierdzone): ") + aktu + rozpiska() + poradnik() + "</center></font></body>";
+                wyliczResp(2, "żab: ") + aktu + rozpiska() + poradnik() + "</center></font></body>";
     }
 
     private static String wyliczResp(int i, String boss) {
