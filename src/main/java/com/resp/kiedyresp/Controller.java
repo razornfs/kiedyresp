@@ -10,14 +10,18 @@ import java.time.format.DateTimeFormatter;
 @RestController
 public class Controller {
 
-    private static int viewCount = readViewCount();
+    private static int viewCount = 444;
 
     private static int readViewCount() {
         try (BufferedReader br = new BufferedReader(new FileReader("views.txt"))) {
             String line = br.readLine();
-            return Integer.parseInt(line);
+            int i = Integer.parseInt(line);
+            if (i < viewCount) {
+                return viewCount;
+            }
+            return i;
         } catch (Exception e) {
-            return 0;
+            return viewCount;
         }
     }
 
