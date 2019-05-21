@@ -3,11 +3,31 @@ package com.resp.kiedyresp;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @RestController
 public class Controller {
+
+    private static int viewCount = readViewCount();
+
+    private static int readViewCount() {
+        try (BufferedReader br = new BufferedReader(new FileReader("views.txt"))) {
+            String line = br.readLine();
+            return Integer.parseInt(line);
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    private static void writeViewCount() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("views.txt"))) {
+            bw.write(String.valueOf(viewCount));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private static String pattern = "H:mm";
     private static String aktu = "Ostatnia aktualizacja: 20 maja";
@@ -15,12 +35,15 @@ public class Controller {
 
     @GetMapping("/")
     public static String asd() {
+        viewCount++;
+        writeViewCount();
         return
                 "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(4, "herobriny: ") +
                 wyliczResp(6, "minosów: ") +
                 wyliczResp(12, "avatara: ") +
-                wyliczResp(2, "żab: ") + aktu + rozpiska() + poradnik() + "</center></font></body>";
+                wyliczResp(2, "żab: ") + liczbaWyswietlen() + aktu + rozpiska() + poradnik() +
+                "</center></font></body>";
     }
 
     private static String wyliczResp(int i, String boss) {
@@ -58,5 +81,9 @@ public class Controller {
 
     private static String poradnik() {
         return "<br></br><a href=poradnik.html>Wojna gildii - poradnik</a>";
+    }
+
+    private static String liczbaWyswietlen() {
+        return "Liczba wyświetleń: " + viewCount + "<br></br>";
     }
 }
