@@ -37,6 +37,7 @@ public class Controller {
     public static String asd() {
         viewCount++;
         writeViewCount();
+        viewCount = readViewCount();
         return
                 "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(4, "herobriny: ") +
