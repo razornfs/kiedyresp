@@ -47,7 +47,7 @@ public class Controller {
                 wyliczResp(4, "herobriny: ") +
                 wyliczResp(6, "minosów: ") +
                 wyliczResp(12, "avatara: ") +
-                wyliczResp(2, "żab: ") + liczbaWyswietlen() + aktu + rozpiska() + poradnik() +
+                wyliczResp(2, "żab: ") /*+ liczbaWyswietlen()*/ + aktu + rozpiska() + poradnik() +
                 "</center></font></body>";
     }
 
