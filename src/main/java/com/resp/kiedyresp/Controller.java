@@ -51,23 +51,25 @@ public class Controller {
                 "</center></font></body>";
     }
 
-    private static String wyliczResp(int i, String boss) {
+    private static String wyliczResp(int czas, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(120);
         LocalDateTime resp = LocalDateTime.of(2019, 6, 7, 19, 4);
         while (true) {
-            resp = resp.plusSeconds((long) (odstep * i * 60));
+            resp = resp.plusSeconds((long) (odstep * czas * 60));
             if (resp.isAfter(now)) {
-                resp = resp.minusSeconds((long) (odstep * i * 60));
+                resp = resp.minusSeconds((long) (odstep * czas * 60));
                 String ret = boss;
                 ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
-                resp = resp.plusSeconds((long) (odstep * i * 60));
+                resp = resp.plusSeconds((long) (odstep * czas * 60));
                 ret = ret + "<b><font size = 5>" + resp.format(DateTimeFormatter.ofPattern(pattern)) + "</font></b>" +
                       ", ";
-                resp = resp.plusSeconds((long) (odstep * i * 60));
-                ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
-                resp = resp.plusSeconds((long) (odstep * i * 60));
-                ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + "<br></br>";
-                return ret;
+                for (int i = 0; i < 4; i++) {
+                    resp = resp.plusSeconds((long) (odstep * czas * 60));
+                    ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern)) + ", ";
+                }
+                resp = resp.plusSeconds((long) (odstep * czas * 60));
+                ret = ret + resp.format(DateTimeFormatter.ofPattern(pattern));
+                return ret + "<br></br>";
             }
         }
     }
