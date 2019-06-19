@@ -83,7 +83,7 @@ public class Controller {
 //               "1 lutego: Bonkers, SilenceLife, Alojz, Hikikomori, LetMeKill, NiePijTato" + "<br></br>" +
 //                "Każda grupa zbija 30 przywołań. Wpisowe od osoby: 300b";
 
-        return "<br></br><a href=https://discord.gg/d3Rf7sy>Info co do zbijania avatarów, sojuszy itd.</a>";
+        return "<br></br><a href=https://discord.gg/d3Rf7sy>Discord</a>";
     }
 
     private static String poradnik() {
