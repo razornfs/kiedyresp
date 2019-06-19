@@ -43,12 +43,7 @@ public class Controller {
         writeViewCount();
         viewCount = readViewCount();
         return
-                "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
-                wyliczResp(4, "herobriny: ") +
-                wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") +
-                wyliczResp(2, "żab: ") /*+ liczbaWyswietlen()*/ + aktu + rozpiska() + poradnik() +
-                "</center></font></body>";
+                "<body bgcolor=#262626><center><font color = #bebebe>Strona odwołana do odwołania</center></font></body>";
     }
 
     private static String wyliczResp(int czas, String boss) {
