@@ -34,7 +34,7 @@ public class Controller {
     }
 
     private static String pattern = "H:mm";
-    private static String aktu = "Ostatnia aktualizacja: 21 czerwca";
+    private static String aktu = "Ostatnia aktualizacja: 22 czerwca";
     private static double odstep = 60;
 
     @GetMapping("/")
@@ -54,7 +54,7 @@ public class Controller {
 
     private static String wyliczResp(int czas, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(120);
-        LocalDateTime resp = LocalDateTime.of(2019, 6, 21, 6, 0);
+        LocalDateTime resp = LocalDateTime.of(2019, 6, 22, 1, 26);
         while (true) {
             resp = resp.plusSeconds((long) (odstep * czas * 60));
             if (resp.isAfter(now)) {
