@@ -34,7 +34,7 @@ public class Controller {
     }
 
     private static String pattern = "H:mm";
-    private static String aktu = "Ostatnia aktualizacja: 2 lipca";
+    private static String aktu = "Ostatnia aktualizacja: 8 lipca";
     private static double odstep = 60;
 
     @GetMapping("/")
@@ -43,18 +43,18 @@ public class Controller {
         writeViewCount();
         viewCount = readViewCount();
         return
-                "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
-                wyliczResp(4, "herobriny: ") +
-                wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") +
+                "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów, klaunów: ") +
                 wyliczResp(2, "żab: ") +
-                wyliczResp(4, "goblinów: ") /*+ liczbaWyswietlen()*/ + aktu + rozpiska() + poradnik() +
+                wyliczResp(3, "krabiej matki: ") +
+                wyliczResp(4, "herobriny, goblinów: ") +
+                wyliczResp(6, "minosów: ") +
+                wyliczResp(12, "avatara: ") /*+ liczbaWyswietlen()*/ + aktu + rozpiska() + poradnik() +
                 "</center></font></body>";
     }
 
     private static String wyliczResp(int czas, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(120);
-        LocalDateTime resp = LocalDateTime.of(2019, 7, 2, 12, 0);
+        LocalDateTime resp = LocalDateTime.of(2019, 7, 8, 13, 45);
         while (true) {
             resp = resp.plusSeconds((long) (odstep * czas * 60));
             if (resp.isAfter(now)) {
