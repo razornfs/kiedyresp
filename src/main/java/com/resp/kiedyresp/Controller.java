@@ -43,7 +43,7 @@ public class Controller {
         writeViewCount();
         viewCount = readViewCount();
         return
-                "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów, klaunów: ") +
+                "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(2, "żab: ") +
                 wyliczResp(3, "krabiej matki: ") +
                 wyliczResp(4, "herobriny, goblinów: ") +
