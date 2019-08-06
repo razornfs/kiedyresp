@@ -12,7 +12,7 @@ public class ServerStartupTime {
 
     private LocalDateTime lastUpdate = LocalDateTime.MIN;
     private LocalDateTime lastKnownStartupTime;
-    private Pattern pattern = Pattern.compile("[0-9]{2}:[0-9]{2} [0-9]{2}-[0-9]{2}-[0-9]{2}");
+    private Pattern pattern = Pattern.compile("([0-9]{2}:[0-9]{2} [0-9]{2}-[0-9]{2}-[0-9]{2})");
     private String dateFormat = "HH:mm dd-MM-yy";
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormat);
     static String aktu = "";
@@ -24,7 +24,7 @@ public class ServerStartupTime {
             String body = Unirest.get("https://pangeayt2.eu/?require=server_status").asString().getBody();
             Matcher matcher = pattern.matcher(body);
             matcher.find();
-            String date = matcher.group();
+            String date = matcher.group(1);
             LocalDateTime newStartupTime = LocalDateTime.parse(date, formatter);
             aktu = String.format("Ostatni reset serwera: %02d-%02d %d:%02d", newStartupTime.getDayOfMonth(),
                                  newStartupTime.getMonthValue(), newStartupTime.getHour(),
