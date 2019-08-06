@@ -10,51 +10,26 @@ import java.time.format.DateTimeFormatter;
 @RestController
 public class Controller {
 
-    private static int viewCount = 444;
-
-    private static int readViewCount() {
-        try (BufferedReader br = new BufferedReader(new FileReader("views.txt"))) {
-            String line = br.readLine();
-            int i = Integer.parseInt(line);
-            if (i < viewCount) {
-                return viewCount;
-            }
-            return i;
-        } catch (Exception e) {
-            return viewCount;
-        }
-    }
-
-    private static void writeViewCount() {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("views.txt"))) {
-            bw.write(String.valueOf(viewCount));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static String pattern = "H:mm";
-    private static String aktu = "Ostatnia aktualizacja: 4 sierpnia";
-    private static double odstep = 60;
+    private String pattern = "H:mm";
+    private String aktu = "Ostatnia aktualizacja: 4 sierpnia";
+    private double odstep = 60;
+    private ServerStartupTime sst = new ServerStartupTime();
 
     @GetMapping("/")
-    public static String asd() {
-        viewCount++;
-        writeViewCount();
-        viewCount = readViewCount();
+    public String asd() {
         return
                 "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(2, "żab: ") +
                 wyliczResp(3, "krabiej matki: ") +
                 wyliczResp(4, "herobriny, goblinów: ") +
                 wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") /*+ liczbaWyswietlen()*/ + aktu + rozpiska() + poradnik() +
+                wyliczResp(12, "avatara: ") + ServerStartupTime.aktu + rozpiska() + poradnik() +
                 "</center></font></body>";
     }
 
-    private static String wyliczResp(int czas, String boss) {
+    private String wyliczResp(int czas, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(120);
-        LocalDateTime resp = LocalDateTime.of(2019, 8, 4, 13, 45);
+        LocalDateTime resp = sst.getStartupTime();/*LocalDateTime.of(2019, 8, 4, 13, 45);*/
         while (true) {
             resp = resp.plusSeconds((long) (odstep * czas * 60));
             if (resp.isAfter(now)) {
@@ -75,7 +50,7 @@ public class Controller {
         }
     }
 
-    private static String rozpiska() {
+    private String rozpiska() {
 //        return "<br></br><b><font size = 5>" + "Zbijanie przywołań Avatara" + "</font></b><br></br>" +
 //               "4 stycznia: Bonkers, Antypatyczny, Chapman, SilenceLife, NiePijTato, Paverell" + "<br></br>" +
 //               "11 stycznia: Bonkers, Antypatyczny, Slooodziak, WojOnePLK, CeHa, SpeaDreaM" + "<br></br>" +
@@ -87,11 +62,7 @@ public class Controller {
         return "<br></br><a href=https://discord.gg/d3Rf7sy>Discord</a>";
     }
 
-    private static String poradnik() {
+    private String poradnik() {
         return "<br></br><a href=poradnik.html>Wojna gildii - poradnik</a>";
-    }
-
-    private static String liczbaWyswietlen() {
-        return "Liczba wyświetleń: " + viewCount + "<br></br>";
     }
 }
