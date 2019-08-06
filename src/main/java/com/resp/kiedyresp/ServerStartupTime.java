@@ -23,8 +23,8 @@ public class ServerStartupTime {
             lastUpdate = now;
             String body = Unirest.get("https://pangeayt2.eu/?require=server_status").asString().getBody();
             Matcher matcher = pattern.matcher(body);
-            matcher.matches();
-            String date = matcher.group(0);
+            matcher.find();
+            String date = matcher.group();
             LocalDateTime newStartupTime = LocalDateTime.parse(date, formatter);
             aktu = String.format("Ostatni reset serwera: %02d-%02d %d:%02d", newStartupTime.getDayOfMonth(),
                                  newStartupTime.getMonthValue(), newStartupTime.getHour(),
