@@ -20,6 +20,7 @@ public class ServerStartupTime {
     public LocalDateTime getStartupTime() {
         LocalDateTime now = LocalDateTime.now();
         if (lastUpdate.until(now, ChronoUnit.MINUTES) > 10 || lastKnownStartupTime == null) {
+            lastUpdate = now;
             String body = Unirest.get("https://pangeayt2.eu/?require=server_status").asString().getBody();
             Matcher matcher = pattern.matcher(body);
             matcher.find();
