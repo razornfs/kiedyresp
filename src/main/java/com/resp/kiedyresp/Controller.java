@@ -45,7 +45,6 @@ public class Controller {
         return
                 "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(2, "żab: ") +
-                wyliczResp(3, "krabiej matki: ") +
                 wyliczResp(4, "herobriny, goblinów: ") +
                 wyliczResp(6, "minosów: ") +
                 wyliczResp(12, "avatara: ") /*+ liczbaWyswietlen()*/ + aktu + rozpiska() + poradnik() +
@@ -54,7 +53,7 @@ public class Controller {
 
     private static String wyliczResp(int czas, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(120);
-        LocalDateTime resp = LocalDateTime.of(2019, 8, 4, 13, 45);
+        LocalDateTime resp = LocalDateTime.of(2019, 11, 27, 12, 26);
         while (true) {
             resp = resp.plusSeconds((long) (odstep * czas * 60));
             if (resp.isAfter(now)) {
