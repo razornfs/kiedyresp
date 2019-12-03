@@ -20,7 +20,6 @@ public class Controller {
         return
                 "<body bgcolor=#262626><center><font color = #bebebe>" + wyliczResp(1, "bossów: ") +
                 wyliczResp(2, "żab: ") +
-                wyliczResp(3, "krabiej matki: ") +
                 wyliczResp(4, "herobriny, goblinów: ") +
                 wyliczResp(6, "minosów: ") +
                 wyliczResp(12, "avatara: ") + ServerStartupTime.aktu + rozpiska() + poradnik() +
