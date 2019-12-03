@@ -34,7 +34,7 @@ public class Controller {
     }
 
     private static String pattern = "H:mm";
-    private static String aktu = "Ostatnia aktualizacja: 4 sierpnia";
+    private static String aktu = "Ostatnia aktualizacja: 3 grudnia";
     private static double odstep = 60;
 
     @GetMapping("/")
