@@ -27,8 +27,8 @@ public class ServerStartupTime {
             String date = matcher.group(0);
             LocalDateTime newStartupTime = LocalDateTime.parse(date, formatter);
             lastKnownStartupTime = newStartupTime;
-            aktu = String.format("Ostatni reset serwera: %02d-%02d %d:%02d", newStartupTime.getDayOfMonth(),
-                                 newStartupTime.getMonthValue(), newStartupTime.getHour(),
+            aktu = String.format("Ostatni reset serwera: %02d-%02d-%02d %d:%02d", newStartupTime.getDayOfMonth(),
+                                 newStartupTime.getMonthValue(), newStartupTime.getYear(), newStartupTime.getHour(),
                                  newStartupTime.getMinute());
             return newStartupTime;
         } else {
