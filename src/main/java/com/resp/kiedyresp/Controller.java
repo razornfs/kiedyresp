@@ -22,7 +22,7 @@ public class Controller {
                 wyliczResp(2, "żab: ") +
                 wyliczResp(4, "herobriny, goblinów: ") +
                 wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") + ServerStartupTime.aktu + rozpiska() + poradnik() +
+                wyliczResp(12, "avatara: ") + ServerStartupTime.aktu + rozpiska() + /* poradnik() + */
                 "</center></font></body>";
     }
 
