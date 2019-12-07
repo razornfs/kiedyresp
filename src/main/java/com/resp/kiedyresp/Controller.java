@@ -26,6 +26,11 @@ public class Controller {
                 "</center></font></body>";
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return LocalDateTime.now().toString();
+    }
+
     private String wyliczResp(int czas, String boss) {
         LocalDateTime now = LocalDateTime.now().plusMinutes(120);
         LocalDateTime resp = sst.getStartupTime();/*LocalDateTime.of(2019, 8, 4, 13, 45);*/
