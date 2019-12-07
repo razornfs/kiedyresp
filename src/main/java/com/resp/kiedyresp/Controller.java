@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 @RestController
@@ -32,7 +34,7 @@ public class Controller {
     }
 
     private String wyliczResp(int czas, String boss) {
-        LocalDateTime now = LocalDateTime.now().plusMinutes(120);
+        LocalDateTime now = LocalDateTime.now().plusMinutes(60);
         LocalDateTime resp = sst.getStartupTime();/*LocalDateTime.of(2019, 8, 4, 13, 45);*/
         while (true) {
             resp = resp.plusSeconds((long) (odstep * czas * 60));
