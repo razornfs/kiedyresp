@@ -10,12 +10,20 @@ import java.util.regex.Pattern;
 
 public class ServerStartupTime {
 
+    public LocalDateTime getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public String getAktu() {
+        return aktu;
+    }
+
     private LocalDateTime lastUpdate = LocalDateTime.MIN;
     private LocalDateTime lastKnownStartupTime;
     private Pattern pattern = Pattern.compile("([0-9]{2}:[0-9]{2} [0-9]{2}-[0-9]{2}-[0-9]{2})");
     private String dateFormat = "HH:mm dd-MM-yy";
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormat);
-    static String aktu = "";
+    private String aktu = "";
 
     public LocalDateTime getStartupTime() {
         LocalDateTime now = LocalDateTime.now();

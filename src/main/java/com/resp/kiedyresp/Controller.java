@@ -24,13 +24,13 @@ public class Controller {
                 wyliczResp(2, "żab: ") +
                 wyliczResp(4, "herobriny, goblinów: ") +
                 wyliczResp(6, "minosów: ") +
-                wyliczResp(12, "avatara: ") + ServerStartupTime.aktu +
+                wyliczResp(12, "avatara: ") + sst.getAktu() +
                 "</center></font></body>";
     }
 
     @GetMapping("/test")
     public String test() {
-        return LocalDateTime.now().toString();
+        return LocalDateTime.now() + "<br></br>" + sst.getLastUpdate();
     }
 
     private String wyliczResp(int czas, String boss) {
